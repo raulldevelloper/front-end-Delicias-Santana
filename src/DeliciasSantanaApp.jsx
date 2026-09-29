@@ -267,12 +267,14 @@ export default function DeliciasSantanaApp() {
     if (!auth) return;
     chamar("/api/produtos").then(setProdutos).catch(() => {});
     chamar("/api/categorias").then(setCategorias).catch(() => {});
-  }, [auth]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [auth]);
 
-  useEffect(() => {
+useEffect(() => {
     if (!auth || !auth.clienteId || tela !== "pedidos") return;
     chamar("/api/pedidos/cliente/" + auth.clienteId).then(setMeusPedidos).catch(() => {});
-  }, [auth, tela]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [auth, tela]);
 
   if (!auth) {
     return <TelaAcesso onEntrar={setAuth} />;
