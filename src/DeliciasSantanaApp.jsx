@@ -324,10 +324,6 @@ useEffect(() => {
     <div className="ds-app">
       <div className="ds-topo">
         <img src={logo} alt="Delicias Santana" className="ds-topo-logo" />
-        <div className="ds-topo-marca">
-          <h1 className="ds-titulo">Delicias Santana</h1>
-          <span>Doces &amp; Salgados</span>
-        </div>
         <div className="ds-topo-nav">
           <button className={tela === "cardapio" ? "ds-ativo" : ""} onClick={() => setTela("cardapio")}>Cardápio</button>
           <button className={tela === "pedidos" ? "ds-ativo" : ""} onClick={() => setTela("pedidos")}>Meus pedidos</button>
