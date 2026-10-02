@@ -98,7 +98,10 @@ function AbaPedidos({ chamar }) {
     }
   }
 
-  useEffect(() => { carregar(); }, []);
+  useEffect(() => {
+  carregar();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   async function avancar(id, novoStatus) {
     try {
@@ -330,7 +333,10 @@ function AbaProdutos({ chamar, categorias }) {
     }
   }
 
-  useEffect(() => { carregar(); }, []);
+  useEffect(() => {
+  carregar();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   function abrirNovo() {
     setProdutoEditando(null);
