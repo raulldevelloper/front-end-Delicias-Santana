@@ -1,0 +1,200 @@
+.pa-app {
+  --bordo: #7A1F2B;
+  --vermelho: #C0392B;
+  --creme: #FFF8F3;
+  --rosa: #F2A6A6;
+  --texto: #2B2320;
+  --texto-suave: #6B5D57;
+  --branco: #FFFFFF;
+  --borda: #E8DCD5;
+
+  font-family: 'Nunito', -apple-system, sans-serif;
+  color: var(--texto);
+  background: var(--creme);
+  min-height: 100vh;
+}
+
+.pa-app * { box-sizing: border-box; }
+.pa-titulo { font-family: 'Playfair Display', Georgia, serif; }
+
+/* ---------- Login ---------- */
+.pa-gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.pa-gate-card {
+  background: var(--branco);
+  width: 100%;
+  max-width: 360px;
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(122, 31, 43, 0.15);
+}
+
+.pa-gate-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 14px;
+  object-fit: cover;
+}
+
+.pa-gate-titulo { text-align: center; font-size: 20px; margin: 0 0 2px; color: var(--bordo); }
+.pa-gate-sub { text-align: center; font-size: 12px; color: var(--texto-suave); margin: 0 0 22px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+.pa-campo { margin-bottom: 12px; }
+.pa-campo label { display: block; font-size: 12px; color: var(--texto-suave); margin-bottom: 4px; }
+.pa-campo input, .pa-campo select, .pa-campo textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1.5px solid var(--borda);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--creme);
+}
+.pa-campo input:focus, .pa-campo select:focus, .pa-campo textarea:focus {
+  outline: none;
+  border-color: var(--vermelho);
+}
+
+.pa-botao {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--bordo);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+.pa-botao:hover { background: var(--vermelho); }
+.pa-botao:disabled { opacity: 0.5; cursor: not-allowed; }
+.pa-botao-bloco { width: 100%; padding: 12px; font-size: 15px; }
+.pa-botao-outline {
+  background: transparent;
+  color: var(--bordo);
+  border: 1.5px solid var(--bordo);
+}
+.pa-botao-outline:hover { background: var(--rosa); }
+
+.pa-erro {
+  background: #FCE8E6; color: #A33; padding: 8px 12px;
+  border-radius: 8px; font-size: 13px; margin-bottom: 12px;
+}
+.pa-sucesso {
+  background: #E6F4EA; color: #2E7D43; padding: 8px 12px;
+  border-radius: 8px; font-size: 13px; margin-bottom: 12px;
+}
+
+/* ---------- Layout geral ---------- */
+.pa-topo {
+  background: var(--bordo);
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.pa-topo-logo { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.pa-topo h1 { font-size: 16px; margin: 0; }
+.pa-topo span { font-size: 11px; opacity: 0.75; display: block; }
+.pa-topo-sair {
+  margin-left: auto;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.pa-abas {
+  display: flex;
+  gap: 24px;
+  padding: 0 24px;
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+}
+.pa-abas button {
+  background: none;
+  border: none;
+  padding: 14px 0;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--texto-suave);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.pa-abas button.pa-aba-ativa {
+  color: var(--bordo);
+  border-bottom-color: var(--vermelho);
+}
+
+.pa-conteudo { padding: 20px 24px 60px; max-width: 1000px; margin: 0 auto; }
+
+/* ---------- Pedidos ---------- */
+.pa-pedidos-grid { display: flex; flex-direction: column; gap: 10px; }
+.pa-pedido-card {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 10px rgba(122,31,43,0.06);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.pa-pedido-id { font-weight: 800; color: var(--bordo); min-width: 70px; }
+.pa-pedido-itens { flex: 1; min-width: 200px; font-size: 13px; color: var(--texto-suave); }
+.pa-pedido-total { font-weight: 800; color: var(--vermelho); min-width: 80px; }
+.pa-status-pill { font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 999px; color: #fff; white-space: nowrap; }
+.pa-vazio { text-align: center; color: var(--texto-suave); margin-top: 40px; font-size: 13px; }
+
+/* ---------- Tabelas (produtos/categorias) ---------- */
+.pa-secao-topo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.pa-secao-topo h2 { font-size: 18px; margin: 0; color: var(--bordo); }
+
+.pa-tabela { width: 100%; border-collapse: collapse; background: var(--branco); border-radius: 10px; overflow: hidden; }
+.pa-tabela th {
+  text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--texto-suave); padding: 10px 12px; border-bottom: 1px solid var(--borda);
+}
+.pa-tabela td { padding: 10px 12px; font-size: 13px; border-bottom: 1px solid var(--borda); }
+.pa-tabela tr:last-child td { border-bottom: none; }
+.pa-badge-inativo { font-size: 11px; color: #A33; font-weight: 700; }
+.pa-badge-ativo { font-size: 11px; color: #2E7D43; font-weight: 700; }
+
+.pa-link-acao {
+  background: none; border: none; color: var(--vermelho);
+  font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; padding: 0; margin-right: 10px;
+}
+
+/* ---------- Modal/form lateral ---------- */
+.pa-overlay { position: fixed; inset: 0; background: rgba(43,35,32,0.45); z-index: 30; }
+.pa-painel-lateral {
+  position: fixed; top: 0; right: 0; height: 100%; width: 100%; max-width: 400px;
+  background: var(--creme); z-index: 40; overflow-y: auto;
+  box-shadow: -8px 0 30px rgba(0,0,0,0.2);
+}
+.pa-painel-lateral-topo {
+  background: var(--bordo); color: #fff; padding: 16px 20px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.pa-painel-lateral-fechar { background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; }
+.pa-painel-lateral-corpo { padding: 20px; }
+
+.pa-linha-dupla { display: flex; gap: 10px; }
+.pa-linha-dupla > div { flex: 1; }
+
+.pa-checkbox { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 14px; }
