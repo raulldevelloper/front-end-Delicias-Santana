@@ -98,10 +98,7 @@ function AbaPedidos({ chamar }) {
     }
   }
 
-  useEffect(() => {
-  carregar();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
+  useEffect(() => { carregar(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function avancar(id, novoStatus) {
     try {
@@ -333,11 +330,7 @@ function AbaProdutos({ chamar, categorias }) {
     }
   }
 
-  useEffect(() => {
-  carregar();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
-
+  useEffect(() => { carregar(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   function abrirNovo() {
     setProdutoEditando(null);
     setFormAberto(true);
