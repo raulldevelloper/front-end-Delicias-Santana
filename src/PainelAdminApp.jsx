@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import logo from "./assets/logo.jpg";
 import "./PainelAdminApp.css";
