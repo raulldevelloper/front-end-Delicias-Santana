@@ -389,7 +389,6 @@ function AbaProdutos({ chamar, categorias }) {
               <td><button className="pa-link-acao" onClick={() => abrirEdicao(p)}>Editar</button></td>
 
               <td>
-              <button className="pa-link-acao" onClick={() => abrirEdicao(p)}>Editar</button>
               <button className="pa-link-acao" style={{ color: "#A33" }} onClick={() => excluir(p)}>Excluir</button>
             </td>
             </tr>
