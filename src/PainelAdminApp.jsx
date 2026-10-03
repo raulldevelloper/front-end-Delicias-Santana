@@ -321,6 +321,18 @@ function AbaProdutos({ chamar, categorias }) {
   const [formAberto, setFormAberto] = useState(false);
   const [produtoEditando, setProdutoEditando] = useState(null);
 
+  async function excluir(produto) {
+    const confirmar = window.confirm(`Tem certeza que deseja excluir "${produto.nome}"? Essa ação não pode ser desfeita.`);
+    if (!confirmar) return;
+
+    try {
+      await chamar(`/api/produtos/${produto.id}`, { method: "DELETE" });
+      carregar();
+    } catch (e) {
+      setErro(e.message);
+    }
+}
+
   async function carregar() {
     setErro(null);
     try {
@@ -375,6 +387,11 @@ function AbaProdutos({ chamar, categorias }) {
                   : <span className="pa-badge-inativo">Oculto</span>}
               </td>
               <td><button className="pa-link-acao" onClick={() => abrirEdicao(p)}>Editar</button></td>
+
+              <td>
+              <button className="pa-link-acao" onClick={() => abrirEdicao(p)}>Editar</button>
+              <button className="pa-link-acao" style={{ color: "#A33" }} onClick={() => excluir(p)}>Excluir</button>
+            </td>
             </tr>
           ))}
         </tbody>
