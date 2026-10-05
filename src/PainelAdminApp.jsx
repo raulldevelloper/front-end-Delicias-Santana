@@ -210,6 +210,8 @@ function FormularioProduto({ chamar, categorias, produtoEditando, onFechar, onSa
   const [erro, setErro] = useState(null);
   const [salvando, setSalvando] = useState(false);
 
+  const [fotoUrl, setFotoUrl] = useState(produtoEditando?.fotoUrl || "");
+
   async function salvar() {
     setErro(null);
     if (!nome.trim() || !categoriaId || !preco) {
@@ -224,7 +226,8 @@ function FormularioProduto({ chamar, categorias, produtoEditando, onFechar, onSa
       estoqueAtual: Number(estoqueAtual),
       tempoPreparoMinutos: Number(tempoPreparo),
       ativo,
-    };
+      fotoUrl: fotoUrl.trim() || null,
+};
     try {
       if (produtoEditando) {
         await chamar(`/api/produtos/${produtoEditando.id}`, {
@@ -264,13 +267,29 @@ function FormularioProduto({ chamar, categorias, produtoEditando, onFechar, onSa
             <label>Descrição</label>
             <textarea rows={2} value={descricao} onChange={e => setDescricao(e.target.value)} />
           </div>
+          <div className="pa-campo">
+            <label>URL da foto (opcional)</label>
+            <input
+              value={fotoUrl}
+              onChange={e => setFotoUrl(e.target.value)}
+              placeholder="https://..."
+            />
+            {fotoUrl && (
+              <img
+                src={fotoUrl}
+                alt="Pré-visualização"
+                style={{ width: "100%", maxHeight: 140, objectFit: "cover", borderRadius: 8, marginTop: 8 }}
+                onError={e => { e.target.style.display = "none"; }}
+              />
+            )}
+          </div>
           <div className="pa-linha-dupla">
             <div className="pa-campo">
               <label>Preço (R$)</label>
-              <input type="number" step="0.01" value={preco} onChange={e => setPreco(e.target.value)} />
-            </div>
-            <div className="pa-campo">
-              <label>Categoria</label>
+    <input type="number" step="0.01" value={preco} onChange={e => setPreco(e.target.value)} />
+  </div>
+  <div className="pa-campo">
+    <label>Categoria</label>
               <select value={categoriaId} onChange={e => setCategoriaId(e.target.value)}>
                 <option value="">-- escolha --</option>
                 {categorias.map(c => <option key={c.id} value={c.id}>{c.nome}</option>)}
