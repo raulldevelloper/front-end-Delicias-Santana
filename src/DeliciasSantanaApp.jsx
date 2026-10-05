@@ -157,7 +157,19 @@ function Vitrine({ produtos, categorias, categoriaAtiva, onCategoriaAtiva, onAdi
       <div className="ds-grid">
         {produtosFiltrados.map(p => (
           <div className="ds-card" key={p.id}>
-            <div className="ds-card-foto"><IconeFoto /></div>
+            <div className="ds-card-foto">
+  {p.fotoUrl ? (
+    <img
+      src={p.fotoUrl}
+      alt={p.nome}
+      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
+    />
+  ) : null}
+  <div style={{ display: p.fotoUrl ? "none" : "flex", width: "100%", height: "100%", alignItems: "center", justifyContent: "center" }}>
+    <IconeFoto />
+  </div>
+</div>
             <div className="ds-card-corpo">
               <p className="ds-card-nome ds-titulo">{p.nome}</p>
               <p className="ds-card-desc">{p.descricao}</p>
