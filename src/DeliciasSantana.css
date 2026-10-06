@@ -1,4 +1,11 @@
+
+
+```css
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 .ds-app {
+
   --bordo: #7A1F2B;
   --bordo-escuro: #5C1620;
   --vermelho: #C0392B;
@@ -8,19 +15,22 @@
   --texto-suave: #6B5D57;
   --branco: #FFFFFF;
 
-  font-family: 'Nunito', -apple-system, sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--texto);
   background: var(--creme);
   min-height: 100vh;
 }
 
-.ds-app * { box-sizing: border-box; }
+.ds-app * {
+  box-sizing: border-box;
+}
 
 .ds-titulo {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* ---------- Tela de login/cadastro ---------- */
+
 .ds-gate {
   min-height: 100vh;
   display: flex;
@@ -54,6 +64,7 @@
   font-size: 24px;
   margin: 0 0 4px;
   color: var(--bordo);
+  font-family: 'Roboto', sans-serif;
 }
 
 .ds-gate-sub {
@@ -72,6 +83,7 @@
   font-size: 12px;
   color: var(--texto-suave);
   margin-bottom: 4px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .ds-campo input {
@@ -79,7 +91,7 @@
   padding: 10px 12px;
   border: 1.5px solid #E8DCD5;
   border-radius: 10px;
-  font-family: inherit;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   background: var(--creme);
 }
@@ -96,22 +108,31 @@
   border-radius: 10px;
   background: var(--vermelho);
   color: #fff;
-  font-family: inherit;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
   transition: background 0.15s ease;
 }
 
-.ds-botao:hover { background: var(--bordo); }
-.ds-botao:disabled { opacity: 0.5; cursor: not-allowed; }
+.ds-botao:hover {
+  background: var(--bordo);
+}
+
+.ds-botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 .ds-botao-secundario {
   background: transparent;
   color: var(--bordo);
   border: 1.5px solid var(--bordo);
 }
-.ds-botao-secundario:hover { background: var(--rosa); }
+
+.ds-botao-secundario:hover {
+  background: var(--rosa);
+}
 
 .ds-alternar {
   text-align: center;
@@ -119,13 +140,14 @@
   font-size: 13px;
   color: var(--texto-suave);
 }
+
 .ds-alternar button {
   background: none;
   border: none;
   color: var(--vermelho);
   font-weight: 700;
   cursor: pointer;
-  font-family: inherit;
+  font-family: 'Roboto', sans-serif;
   font-size: 13px;
 }
 
@@ -139,6 +161,7 @@
 }
 
 /* ---------- Topo / navegação ---------- */
+
 .ds-topo {
   background: var(--bordo);
   color: #fff;
@@ -168,6 +191,7 @@
   font-size: 18px;
   margin: 0;
   line-height: 1.1;
+  font-family: 'Roboto', sans-serif;
 }
 
 .ds-topo-marca span {
@@ -184,13 +208,14 @@
   background: none;
   border: none;
   color: #fff;
-  font-family: inherit;
+  font-family: 'Roboto', sans-serif;
   font-size: 13px;
   padding: 8px 10px;
   border-radius: 8px;
   cursor: pointer;
   opacity: 0.75;
 }
+
 .ds-topo-nav button.ds-ativo {
   opacity: 1;
   background: rgba(255,255,255,0.15);
@@ -205,7 +230,7 @@
   border-radius: 10px;
   padding: 8px 12px;
   cursor: pointer;
-  font-family: inherit;
+  font-family: 'Roboto', sans-serif;
   font-size: 13px;
   font-weight: 700;
 }
@@ -227,6 +252,7 @@
 }
 
 /* ---------- Categorias ---------- */
+
 .ds-categorias {
   display: flex;
   gap: 8px;
@@ -241,7 +267,7 @@
   color: var(--bordo);
   padding: 8px 16px;
   border-radius: 999px;
-  font-family: inherit;
+  font-family: 'Roboto', sans-serif;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
@@ -255,6 +281,7 @@
 }
 
 /* ---------- Grid de produtos ---------- */
+
 .ds-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -325,8 +352,12 @@
   font-size: 18px;
   cursor: pointer;
   line-height: 1;
+  font-family: 'Roboto', sans-serif;
 }
-.ds-card-add:hover { background: var(--vermelho); }
+
+.ds-card-add:hover {
+  background: var(--vermelho);
+}
 
 .ds-esgotado {
   font-size: 11px;
@@ -335,6 +366,7 @@
 }
 
 /* ---------- Carrinho (drawer) ---------- */
+
 .ds-overlay {
   position: fixed;
   inset: 0;
@@ -371,6 +403,7 @@
   color: #fff;
   font-size: 22px;
   cursor: pointer;
+  font-family: 'Roboto', sans-serif;
 }
 
 .ds-drawer-itens {
@@ -391,6 +424,7 @@
   margin: 0 0 2px;
   font-size: 14px;
 }
+
 .ds-item-info span {
   font-size: 12px;
   color: var(--texto-suave);
@@ -410,6 +444,7 @@
   background: #fff;
   cursor: pointer;
   font-size: 14px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .ds-drawer-rodape {
@@ -434,6 +469,7 @@
 }
 
 /* ---------- Meus Pedidos ---------- */
+
 .ds-pedidos-lista {
   padding: 16px 20px 100px;
   display: flex;
@@ -482,6 +518,7 @@
 }
 
 /* ---------- Confirmação (WhatsApp) ---------- */
+
 .ds-confirmacao {
   position: fixed;
   inset: 0;
@@ -515,8 +552,12 @@
   text-decoration: none;
   font-weight: 800;
   margin-top: 12px;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media (min-width: 640px) {
-  .ds-grid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+  .ds-grid {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
 }
+```
